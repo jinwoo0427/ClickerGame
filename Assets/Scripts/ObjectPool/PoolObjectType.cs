@@ -1,0 +1,25 @@
+public enum PoolObjectType
+{
+    Kongaltan,
+    Sylyutan,
+    Dynamite,
+    Stickybomb,
+    Bomb,
+    Cartoonbomb1,
+    Chemicalbomb,
+    Cartoonbomb2,
+    Skullbomb,
+    HeckBomb,
+    Slime,
+    SlimeCow,
+    SlimeKing,
+    Babydragon,
+    Rabbit,
+    Bear,
+    TreeMonster,
+    RockMonster,
+    Anubis,
+    slider,
+    cartooneffect,
+
+}
