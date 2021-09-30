@@ -20,6 +20,8 @@ public enum PoolObjectType
     RockMonster,
     Anubis,
     slider,
-    cartooneffect,
+    storeAnimegpc,
+    storeAnimeauto,
+    storeAnimedamage,
 
 }

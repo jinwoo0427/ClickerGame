@@ -1,14 +1,14 @@
 ﻿{
     "userName": "유진우",
-    "UnlockNum": 4,
-    "gold": 10521,
-    "Diamond": 99680,
+    "UnlockNum": 1,
+    "gold": 4156,
+    "Diamond": 99990,
     "boostE": 1,
     "boostD": 1,
     "boostA": 1,
     "gPc": 0,
     "gPs": 10,
-    "damage": 10,
+    "damage": 37,
     "bombList": [
         {
             "BombNumber": 0,
@@ -22,7 +22,7 @@
         {
             "BombNumber": 1,
             "BombName": "슈루탄",
-            "Level": 1,
+            "Level": 0,
             "price": 150,
             "UnLockprice": 200,
             "DiaNum": 345,
@@ -31,7 +31,7 @@
         {
             "BombNumber": 2,
             "BombName": "다이너마이트",
-            "Level": 1,
+            "Level": 0,
             "price": 300,
             "UnLockprice": 300,
             "DiaNum": 3456,
@@ -40,7 +40,7 @@
         {
             "BombNumber": 3,
             "BombName": "점착폭탄",
-            "Level": 1,
+            "Level": 0,
             "price": 450,
             "UnLockprice": 400,
             "DiaNum": 234,
@@ -105,11 +105,11 @@
         {
             "AbilityNumber": 0,
             "AbilityName": "대미지",
-            "Level": 1,
-            "price": 100,
+            "Level": 3,
+            "price": 156,
             "Diamond": 0,
             "goldAbility": 0,
-            "damage": 10,
+            "damage": 15,
             "autogold": 0
         },
         {
@@ -159,7 +159,7 @@
             "enemyName": "슬라임 소",
             "level": 2,
             "maxhp": 200,
-            "currenthp": 140,
+            "currenthp": 200,
             "gold": 200,
             "diamond": 20,
             "num": 0
@@ -179,7 +179,7 @@
             "enemyName": "아기용",
             "level": 4,
             "maxhp": 400,
-            "currenthp": 0,
+            "currenthp": 400,
             "gold": 400,
             "diamond": 40,
             "num": 0
@@ -188,8 +188,8 @@
             "enemyNum": 4,
             "enemyName": "토끼족",
             "level": 5,
-            "maxhp": 500,
-            "currenthp": 500,
+            "maxhp": 2500,
+            "currenthp": -27,
             "gold": 500,
             "diamond": 50,
             "num": 0
@@ -199,7 +199,7 @@
             "enemyName": "폭주곰",
             "level": 6,
             "maxhp": 600,
-            "currenthp": -30,
+            "currenthp": 180,
             "gold": 600,
             "diamond": 60,
             "num": 0
@@ -208,8 +208,8 @@
             "enemyNum": 6,
             "enemyName": "괴물나무",
             "level": 7,
-            "maxhp": 700,
-            "currenthp": 700,
+            "maxhp": 3500,
+            "currenthp": 2649,
             "gold": 700,
             "diamond": 70,
             "num": 0
@@ -218,8 +218,8 @@
             "enemyNum": 7,
             "enemyName": "골렘",
             "level": 8,
-            "maxhp": 800,
-            "currenthp": 800,
+            "maxhp": 4000,
+            "currenthp": -14,
             "gold": 800,
             "diamond": 80,
             "num": 0
@@ -228,8 +228,8 @@
             "enemyNum": 8,
             "enemyName": "아누비스",
             "level": 9,
-            "maxhp": 900,
-            "currenthp": 900,
+            "maxhp": 4500,
+            "currenthp": 4500,
             "gold": 900,
             "diamond": 90,
             "num": 0

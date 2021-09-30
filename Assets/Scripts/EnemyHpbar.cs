@@ -14,10 +14,15 @@ public class EnemyHpbar : MonoBehaviour
     [SerializeField]
     private Text hpText;
     float hping;
-
-
+    [SerializeField]
+    private DamageText damageTextTemplate = null;
+    [SerializeField]
+    private Transform pool = null;
+    private Vector3 vec;
+    
     public void SetValue(Enemy enemy)
     {
+    
         this.enemy = enemy;
         UpdateEnemy();
     }
@@ -45,41 +50,26 @@ public class EnemyHpbar : MonoBehaviour
     }
     public void CheckHp()
     {
-            currentenemy.currenthp -= GameManager.Instance.CurrentUser.damage * GameManager.Instance.CurrentUser.boostD;
-        
+        currentenemy.currenthp -= GameManager.Instance.CurrentUser.damage * GameManager.Instance.CurrentUser.boostD;
+        float randomX = Random.Range(4f, -5f);
+        float randomY = Random.Range(2f, 3f);
+        vec = new Vector3(randomX, randomY, 10f);
+        DamageText newText = null;
+        if (pool.childCount > 0)
+        {
+            newText = pool.GetChild(0).GetComponent<DamageText>();
+        }
+        else
+        {
+            newText = Instantiate(damageTextTemplate, damageTextTemplate.transform.parent);
+        }
+
+        newText.Show(vec);
+
         if (currentenemy.currenthp <= 0)
         {
             ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //switch (currentenemy.num)
-            //{
-            //    case 0:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 1:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 2:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 3:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 4:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 5:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 6:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 7:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //    case 8:
-            //        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
-            //        break;
-            //}
+            
             GameManager.Instance.CurrentUser.Diamond += enemy.diamond;
             GameManager.Instance.CurrentUser.gold += enemy.gold;
             
@@ -88,21 +78,11 @@ public class EnemyHpbar : MonoBehaviour
         }
 
     }
-    //public void HpUp()
-    //{
-    //    //switch (GameManager.Instance.CurrentUser.damage)
-    //    //{
-    //    //    case 2:
-    //    //        GameManager.Instance.currentenemy.maxhp 
+    public void HpUp()
+    {
+        enemy.maxhp *= (long)1.25f;
 
-    //    //}
-
-    //    if(GameManager.Instance.CurrentUser.damage >= )
-    //    {
-
-    //    }
-
-    //}
+    }
     public void Hp()
     {
         //hpbar.value = currentenemy.currenthp / currentenemy.maxhp;

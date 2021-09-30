@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 184098552432023990}
   - component: {fileID: 2091469246531593607}
   - component: {fileID: 2896616270322149375}
+  - component: {fileID: 409159261}
   m_Layer: 0
   m_Name: "\uCE74\uD230_\uD3ED\uBC1C_\uC774\uD399\uD2B8_2_0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &184098552432023990
 Transform:
   m_ObjectHideFlags: 0
@@ -102,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &409159261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773329698614481005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60612ebfa59ae943bcd502505f4eb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPo: {x: 0, y: -1, z: 10}

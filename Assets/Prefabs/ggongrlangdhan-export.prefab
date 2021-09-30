@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombanimator: {fileID: 0}
+  damageTextTemplate: {fileID: 0}
 --- !u!50 &-3364727526681566111
 Rigidbody2D:
   serializedVersion: 4

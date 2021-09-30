@@ -10,7 +10,6 @@ public class BombMove : MonoBehaviour
     private Rigidbody2D rb;
     private float timer = 0;
     private float waitingTime;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +24,6 @@ public class BombMove : MonoBehaviour
     }
     private void OnEnable()
     {
-
         CheckAnime();
         rb.simulated = true;
     }
@@ -134,6 +132,7 @@ public class BombMove : MonoBehaviour
         {
             rb.simulated = false;
             bombanimator.Play("Explosion");
+
             //if (collision.tag == "enemy" || collision.tag == "floor")
         }
         //rb.simulated = true;
@@ -142,4 +141,5 @@ public class BombMove : MonoBehaviour
         
 
     }
+   
 }

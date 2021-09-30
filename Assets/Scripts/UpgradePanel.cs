@@ -71,6 +71,7 @@ public class UpgradePanel : MonoSingleton<UpgradePanel>
     }
     public void OnClickFirstPur()
     {
+        SoundManager.Instance.UiSound();
         if (GameManager.Instance.CurrentUser.Diamond < bomb.UnLockprice)
         {
             return;     //다이아 부족하면 리턴
@@ -88,6 +89,7 @@ public class UpgradePanel : MonoSingleton<UpgradePanel>
     }
     public void OnClickPurchase()   //폭탄을 샀을 경우
     {
+        SoundManager.Instance.UiSound();
         if (GameManager.Instance.CurrentUser.gold < bomb.price)
         {
             return;     //골드 부족하면 리턴

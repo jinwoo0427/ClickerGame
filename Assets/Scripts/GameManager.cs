@@ -9,8 +9,6 @@ public class GameManager : MonoSingleton<GameManager>
     private string SAVE_PATH = "";
     private string SAVE_FILENAME = "/SaveFile.txt";
     [SerializeField]
-    private GameObject cartooneffect;
-    [SerializeField]
     private User user = null;
     public User CurrentUser { get { return user; } }
     
@@ -60,7 +58,6 @@ public class GameManager : MonoSingleton<GameManager>
     
     public void CreateEnemy()
     {
-        
         int randomspawn = UnityEngine.Random.Range(0, 9);
         //Debug.Log(randomspawn);
         enemy.num = randomspawn;

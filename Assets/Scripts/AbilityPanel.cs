@@ -51,6 +51,7 @@ public class AbilityPanel : MonoBehaviour
     }
     public void OnClickPurchase()   
     {
+        SoundManager.Instance.UiSound();
         if (GameManager.Instance.CurrentUser.gold < ability.price)
         {
             return;     //골드 부족하면 리턴

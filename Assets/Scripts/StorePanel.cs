@@ -52,7 +52,6 @@ public class StorePanel : MonoBehaviour
     }
     public void UpdateUI()
     {
-        
         storeNameText.text = store.StoreName;
         priceText.text = string.Format("{0}다이아", store.price);
         timeText.text = string.Format("({0}초)", store.time);
@@ -61,20 +60,25 @@ public class StorePanel : MonoBehaviour
     private void Check()
     {
         if (store.StoreNumber == 0)
+        {
+
             GameManager.Instance.CurrentUser.boostE = 10;
+        }
         if (store.StoreNumber == 1)
+        {
+
             GameManager.Instance.CurrentUser.boostA = 10;
+        }
         if (store.StoreNumber == 2)
+        {
+
             GameManager.Instance.CurrentUser.boostD = 10;
+        }
     }
-    private void TimeCh()
-    {
-
-        Invoke("Timer", store.time);
-
-    }
+    
     public void OnClickPurchase()
     {
+        SoundManager.Instance.UiSound();
         if (GameManager.Instance.CurrentUser.gold < store.price || store.on == true)
         {
             return;     //골드 부족하면 리턴

@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
 
 
 
-    private void Start()
+    void Start()
     {
         UpdateDiaPanel();
         UpdateGoldPanel();
@@ -216,18 +216,18 @@ public class UIManager : MonoBehaviour
         
         //beakerAnimator.Play("Click");
 
-        //EnergyText newText = null;
+        //energytext newtext = null;
 
-        //if (pool.childCount > 0)
+        //if (pool.childcount > 0)
         //{
-        //    newText = pool.GetChild(0).GetComponent<EnergyText>();
+        //    newtext = pool.getchild(0).getcomponent<energytext>();
         //}
         //else
         //{
-        //    newText = Instantiate(energyTextTemplate, energyTextTemplate.transform.parent);
+        //    newtext = instantiate(energytexttemplate, energytexttemplate.transform.parent);
         //}
 
-        //newText.Show(Input.mousePosition);
+        //newtext.show(input.mouseposition);
 
 
 
