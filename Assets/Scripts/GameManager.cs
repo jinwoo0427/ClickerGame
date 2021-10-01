@@ -1,5 +1,5 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
 
 
@@ -18,7 +18,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Store store = null;
     public Store Currentstore{ get { return store; } }
-
+    [SerializeField]
+    private StorePanel storepanel = null;
+    public StorePanel Currentstorepanel { get { return storepanel; } }
 
     [SerializeField]
     private Enemy enemy = null;
@@ -36,13 +38,16 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
+    public bool isEnemy;
+
+
 
     private void Awake()
     {
 
         //¾Èµå·ÎÀÌµå ºôµå½Ã Application.persistentDataPath
         
-        SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
         if (Directory.Exists(SAVE_PATH) == false)
         {
             Directory.CreateDirectory(SAVE_PATH);
@@ -53,11 +58,15 @@ public class GameManager : MonoSingleton<GameManager>
         uiManager = GetComponent<UIManager>();
         CurrentUser.UnlockNum = 0;
         CreateEnemy();
+        storepanel.BoostEnabled();
+        //BgmSound.Instance.BgmPlay();
     }
     
     
     public void CreateEnemy()
     {
+        if (isEnemy)
+            return;
         int randomspawn = UnityEngine.Random.Range(0, 9);
         //Debug.Log(randomspawn);
         enemy.num = randomspawn;
@@ -102,8 +111,18 @@ public class GameManager : MonoSingleton<GameManager>
                 break;
             
         }
+        isEnemy = true;
     }
-
+    private IEnumerator SpawnCool()
+    {
+        yield return new WaitForSeconds(0.1f);
+        CreateEnemy();
+    }
+    public void Spawn()
+    {
+        StartCoroutine(SpawnCool());
+    }
+    
     private void EarnGoldPerSecond()
     {
         user.gold += user.gPs;    //À¯Àú °ñµå¿¡ ÆøÅº °ñµå¸¦ ·¹º§¸¸Å­ °öÇØ¼­ ´õÇÔ  

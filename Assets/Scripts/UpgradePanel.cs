@@ -71,7 +71,7 @@ public class UpgradePanel : MonoSingleton<UpgradePanel>
     }
     public void OnClickFirstPur()
     {
-        SoundManager.Instance.UiSound();
+        SoundManager.Instance.Ui1Sound();
         if (GameManager.Instance.CurrentUser.Diamond < bomb.UnLockprice)
         {
             return;     //´ÙÀÌ¾Æ ºÎÁ·ÇÏ¸é ¸®ÅÏ
@@ -89,13 +89,13 @@ public class UpgradePanel : MonoSingleton<UpgradePanel>
     }
     public void OnClickPurchase()   //ÆøÅºÀ» »òÀ» °æ¿ì
     {
-        SoundManager.Instance.UiSound();
+        SoundManager.Instance.Ui1Sound();
         if (GameManager.Instance.CurrentUser.gold < bomb.price)
         {
             return;     //°ñµå ºÎÁ·ÇÏ¸é ¸®ÅÏ
         }
         GameManager.Instance.CurrentUser.gold -= bomb.price; // ÇöÀç À¯Àú °ñµå¿¡¼­ ÆøÅº °¡°Ý »©±â
-        bomb.price = (long)(bomb.price * 1.25f);    //ÆøÅº °¡°Ý 1.25¹è¾¿ Áõ°¡
+        bomb.price = (long)(bomb.price * 1.2f);    
         bomb.Level++;      //ÆøÅº ·¹º§ Áõ°¡
         GameManager.Instance.CurrentUser.damage += bomb.BombDamage;
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BombMove : MonoBehaviour
@@ -37,11 +35,9 @@ public class BombMove : MonoBehaviour
             BombTrans();
             timer = 0;
         }
-        //transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
     public void BombTrans()
     {
-        //bombanimator.Play("New State");
         float randomX = Random.Range(2f, -2f);
         gameObject.transform.position = new Vector3(randomX, 6f, 10f);
 
@@ -88,7 +84,6 @@ public class BombMove : MonoBehaviour
 
         switch (GameManager.Instance.CurrentUser.UnlockNum)
         {
-
             case 1:
                 ObjectPool.Instance.ReturnObject(PoolObjectType.Kongaltan, gameObject);
                 break;
@@ -133,12 +128,7 @@ public class BombMove : MonoBehaviour
             rb.simulated = false;
             bombanimator.Play("Explosion");
 
-            //if (collision.tag == "enemy" || collision.tag == "floor")
         }
-        //rb.simulated = true;
-        //CheckBomb();
-        //BombTrans();
-        
 
     }
    

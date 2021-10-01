@@ -8,9 +8,9 @@ public class User
     public int UnlockNum;
     public long gold;
     public long Diamond;
-    public long boostE;
-    public long boostD;
-    public long boostA;
+    public long boostgPc;
+    public long boostgPs;
+    public long boostdamage;
     public long gPc;    //gold per click
     public long gPs;    //gold per click
     public long damage;    //gold per click

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,14 +27,13 @@ public class EnemyHpbar : MonoBehaviour
     public void UpdateEnemy()
     {
         enemyNameText.text = enemy.enemyName;
-        hpText.text = string.Format("{0}", enemy.currenthp);
+        hpText.text = string.Format("{0:#,0} ", enemy.currenthp);
     }
 
 
 
     void Start()
     {
-        //hpbar.maxValue = enemy.maxhp;
         enemy.currenthp = enemy.maxhp;
         UpdateEnemy();
     }
@@ -50,7 +47,7 @@ public class EnemyHpbar : MonoBehaviour
     }
     public void CheckHp()
     {
-        currentenemy.currenthp -= GameManager.Instance.CurrentUser.damage * GameManager.Instance.CurrentUser.boostD;
+        currentenemy.currenthp -= GameManager.Instance.CurrentUser.damage * GameManager.Instance.CurrentUser.boostgPs;
         float randomX = Random.Range(4f, -5f);
         float randomY = Random.Range(2f, 3f);
         vec = new Vector3(randomX, randomY, 10f);
@@ -68,8 +65,9 @@ public class EnemyHpbar : MonoBehaviour
 
         if (currentenemy.currenthp <= 0)
         {
-            ObjectPool.Instance.ReturnObject(PoolObjectType.slider, GameManager.Instance.UI.newSlider);
+            ObjectPool.Instance.ReturnObject(PoolObjectType.slider, gameObject);
             
+            SoundManager.Instance.Getdia();
             GameManager.Instance.CurrentUser.Diamond += enemy.diamond;
             GameManager.Instance.CurrentUser.gold += enemy.gold;
             
@@ -80,13 +78,12 @@ public class EnemyHpbar : MonoBehaviour
     }
     public void HpUp()
     {
-        enemy.maxhp *= (long)1.25f;
+        ObjectPool.Instance.ReturnObject(PoolObjectType.slider, gameObject);
+        enemy.maxhp += GameManager.Instance.CurrentUser.damage/2;
 
     }
     public void Hp()
     {
-        //hpbar.value = currentenemy.currenthp / currentenemy.maxhp;
-        
         hpbar.value = Mathf.Lerp(hpbar.value, hping, Time.deltaTime * 10);
         UpdateEnemy();
     }

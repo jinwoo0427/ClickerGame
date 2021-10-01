@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioClip ui;
-    public AudioClip uiend;
+    public AudioClip bombEffect;
+    public AudioClip dia;
 
     AudioSource myAudio;
     public static SoundManager Instance;
@@ -14,17 +15,32 @@ public class SoundManager : MonoBehaviour
         if (SoundManager.Instance == null)
             SoundManager.Instance = this;
     }
+
     void Start()
     {
         myAudio = GetComponent<AudioSource>();
     }
-
-    public void UiSound()
+    
+    public void Ui1Sound()
     {
         myAudio.PlayOneShot(ui);
     }
-    public void UiendSound()
+   
+    public void BombEffect()
     {
-        myAudio.PlayOneShot(uiend);
+        myAudio.PlayOneShot(bombEffect);
     }
+    public void Getdia()
+    {
+        myAudio.PlayOneShot(dia);
+    }
+    public void EffectMute(bool isOn)
+    {
+        myAudio.mute = !isOn;
+    }
+
+
+
+
+
 }

@@ -17,7 +17,7 @@ public class DamageText : MonoBehaviour
         float randomY = Random.Range(2f, 3f);
         vec = new Vector3(randomX, randomY, 10f);
         damageText = GetComponent<Text>();
-        damageText.text = string.Format("-{0}", GameManager.Instance.CurrentUser.damage);
+        damageText.text = string.Format("-{0}", GameManager.Instance.CurrentUser.damage * GameManager.Instance.CurrentUser.boostdamage);
 
         transform.SetParent(canvas.transform);
         transform.position = Camera.main.WorldToViewportPoint(vec);

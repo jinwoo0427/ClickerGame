@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Enemymove : MonoBehaviour
 {
@@ -19,53 +17,39 @@ public class Enemymove : MonoBehaviour
 
    public void ReturnObj()
     {
+        ObjectPool.Instance.ReturnObject(PoolObjectType.Slime, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.SlimeCow, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.SlimeKing, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.Babydragon, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.Rabbit, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.Bear, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.TreeMonster, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.RockMonster, gameObject);
+        ObjectPool.Instance.ReturnObject(PoolObjectType.Anubis, gameObject);
 
-        switch (GameManager.Instance.currentenemy.num)
-        {
-            case 0:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.Slime, gameObject);
-                break;
-            case 1:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.SlimeCow, gameObject);
-                break;
-            case 2:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.SlimeKing, gameObject);
-                break;
-            case 3:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.Babydragon, gameObject);
-                break;
-            case 4:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.Rabbit, gameObject);
-                break;
-            case 5:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.Bear, gameObject);
-                break;
-            case 6:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.TreeMonster, gameObject);
-                break;
-            case 7:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.RockMonster, gameObject);
-                break;
-            case 8:
-                ObjectPool.Instance.ReturnObject(PoolObjectType.Anubis, gameObject);
-                break;
-        }
     }
     public void Die()
     {
             if(enemyHpbar.currentenemy.currenthp <= 0)
             {
-                GameManager.Instance.CreateEnemy();
-                ReturnObj();
-            enemyHpbar.HpUp();
+                enemyHpbar.HpUp();
+                StartCoroutine(HpCool());
+                GameManager.Instance.isEnemy = false;
+                GameManager.Instance.Spawn();
             }
-
     }
+    private IEnumerator HpCool()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ReturnObj();
+    }
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "bomb")
         {
+            SoundManager.Instance.BombEffect();
             enemyHpbar.CheckHp();
             Die();
         }

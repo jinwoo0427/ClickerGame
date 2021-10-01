@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,8 +8,6 @@ public class UIManager : MonoBehaviour
     private Text goldText = null;
     [SerializeField]
     private Text DiamondText = null;
-    //[SerializeField]
-    //private Animator beakerAnimator = null;
     [SerializeField]
     private GameObject upgradePanelTemplate = null;
     private List<UpgradePanel> upgradePanels = new List<UpgradePanel>();
@@ -25,27 +22,21 @@ public class UIManager : MonoBehaviour
     private GameObject hpbar = null;
     private List<EnemyHpbar> hpslider = new List<EnemyHpbar>();
 
-    //[SerializeField]
-    // private EnergyText energyTextTemplate = null;
-    //[SerializeField]
-    //private Transform pool = null;
-
-
-
-    void Start()
+     void Start()
     {
         UpdateDiaPanel();
         UpdateGoldPanel();
         CreateBombPanels();
         CreateAbilityPanels();
         CreateStorePanels();
-
+        
     }
-       public GameObject newSlider = null;
-       public EnemyHpbar newSliderComponent = null;
+       //public GameObject newSlider = null;
+       //public EnemyHpbar newSliderComponent = null;
     public void CreateHp(int i)
     {
-       
+        GameObject newSlider = null;
+        EnemyHpbar newSliderComponent = null;
         switch (i)
         {
             case 0:
@@ -168,7 +159,6 @@ public class UIManager : MonoBehaviour
     public void CreateBomb()
     {
 
-
         switch (GameManager.Instance.CurrentUser.UnlockNum)
         {
             case 1:
@@ -206,40 +196,18 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickbomb()
     {
-       
-        GameManager.Instance.CurrentUser.gold += GameManager.Instance.CurrentUser.gPc * GameManager.Instance.CurrentUser.boostE;
-
-
+        GameManager.Instance.CurrentUser.gold += GameManager.Instance.CurrentUser.gPc * GameManager.Instance.CurrentUser.boostgPc;
         UpdateGoldPanel();
         CreateBomb();
-
-        
-        //beakerAnimator.Play("Click");
-
-        //energytext newtext = null;
-
-        //if (pool.childcount > 0)
-        //{
-        //    newtext = pool.getchild(0).getcomponent<energytext>();
-        //}
-        //else
-        //{
-        //    newtext = instantiate(energytexttemplate, energytexttemplate.transform.parent);
-        //}
-
-        //newtext.show(input.mouseposition);
-
-
-
     }
 
     public void UpdateGoldPanel()
     {
-        goldText.text = string.Format("{0}", GameManager.Instance.CurrentUser.gold);  //골드 값 업데이트
+        goldText.text = string.Format("{0:#,0}", GameManager.Instance.CurrentUser.gold);  //골드 값 업데이트
     }
     public void UpdateDiaPanel()
     {
-        DiamondText.text = string.Format("{0}", GameManager.Instance.CurrentUser.Diamond);  //다이아몬드 값 업데이트
+        DiamondText.text = string.Format("{0:#,0}", GameManager.Instance.CurrentUser.Diamond);  //다이아몬드 값 업데이트
     }
 
 }

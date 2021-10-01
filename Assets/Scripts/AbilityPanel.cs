@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class AbilityPanel : MonoBehaviour
@@ -51,19 +49,19 @@ public class AbilityPanel : MonoBehaviour
     }
     public void OnClickPurchase()   
     {
-        SoundManager.Instance.UiSound();
+        SoundManager.Instance.Ui1Sound();
         if (GameManager.Instance.CurrentUser.gold < ability.price)
         {
             return;     //골드 부족하면 리턴
         }
         GameManager.Instance.CurrentUser.gold -= ability.price; // 현재 유저 골드에서 가격 빼기
-        ability.price = (long)(ability.price * 1.25f);    //가격 1.25배씩 증가
+        ability.price = (long)(ability.price * 1.2f);   
         ability.Level++;      // 레벨 증가
-        ability.damage = (long)(ability.damage * 1.25f);
-        ability.Diamond = (long)(ability.Diamond * 1.1f);
+        ability.damage = (long)(ability.damage * 1.2f);
+        ability.Diamond = (long)(ability.Diamond * 2.2f);
         ChDia();
-        ability.goldAbility = (long)(ability.goldAbility * 1.25f);
-        ability.autogold = (long)(ability.autogold * 1.25f);
+        ability.goldAbility = (long)(ability.goldAbility * 1.2f);
+        ability.autogold = (long)(ability.autogold * 1.2f);
         Check();
         UpdateUI();
         GameManager.Instance.UI.UpdateGoldPanel();  //골드 값 업데이트
