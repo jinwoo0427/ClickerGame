@@ -109,7 +109,7 @@ public class StorePanel : MonoBehaviour
     public void OnClickPurchase()
     {
         SoundManager.Instance.Ui1Sound();
-        if (GameManager.Instance.CurrentUser.gold < store.price || store.on == true)
+        if (GameManager.Instance.CurrentUser.Diamond < store.price || store.on == true)
         {
             return;     //골드 부족하면 리턴
         }

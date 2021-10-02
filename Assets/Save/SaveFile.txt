@@ -1,0 +1,260 @@
+﻿{
+    "userName": "유진우",
+    "UnlockNum": 1,
+    "gold": 5,
+    "Diamond": 0,
+    "boostgPc": 1,
+    "boostgPs": 1,
+    "boostdamage": 1,
+    "gPc": 1,
+    "gPs": 1,
+    "damage": 1,
+    "bombList": [
+        {
+            "BombNumber": 0,
+            "BombName": "콩알탄",
+            "Level": 1,
+            "price": 10,
+            "UnLockprice": 100,
+            "BombDamage": 1
+        },
+        {
+            "BombNumber": 1,
+            "BombName": "슈루탄",
+            "Level": 0,
+            "price": 150,
+            "UnLockprice": 200,
+            "BombDamage": 2
+        },
+        {
+            "BombNumber": 2,
+            "BombName": "다이너마이트",
+            "Level": 0,
+            "price": 300,
+            "UnLockprice": 500,
+            "BombDamage": 3
+        },
+        {
+            "BombNumber": 3,
+            "BombName": "점착폭탄",
+            "Level": 0,
+            "price": 450,
+            "UnLockprice": 650,
+            "BombDamage": 4
+        },
+        {
+            "BombNumber": 4,
+            "BombName": "원형폭탄",
+            "Level": 0,
+            "price": 600,
+            "UnLockprice": 1000,
+            "BombDamage": 5
+        },
+        {
+            "BombNumber": 5,
+            "BombName": "카툰폭탄",
+            "Level": 0,
+            "price": 1000,
+            "UnLockprice": 1300,
+            "BombDamage": 6
+        },
+        {
+            "BombNumber": 6,
+            "BombName": "화학폭탄",
+            "Level": 0,
+            "price": 1500,
+            "UnLockprice": 1800,
+            "BombDamage": 7
+        },
+        {
+            "BombNumber": 7,
+            "BombName": "카툰폭탄2",
+            "Level": 0,
+            "price": 3000,
+            "UnLockprice": 2500,
+            "BombDamage": 8
+        },
+        {
+            "BombNumber": 8,
+            "BombName": "해골폭탄",
+            "Level": 0,
+            "price": 6000,
+            "UnLockprice": 4000,
+            "BombDamage": 10
+        },
+        {
+            "BombNumber": 9,
+            "BombName": "핵",
+            "Level": 0,
+            "price": 999999,
+            "UnLockprice": 10000,
+            "BombDamage": 100
+        }
+    ],
+    "abilityList": [
+        {
+            "AbilityNumber": 0,
+            "AbilityName": "대미지",
+            "Level": 1,
+            "price": 10,
+            "Diamond": 0,
+            "goldAbility": 0,
+            "damage": 2,
+            "autogold": 0
+        },
+        {
+            "AbilityNumber": 1,
+            "AbilityName": "오토골드",
+            "Level": 1,
+            "price": 20,
+            "Diamond": 0,
+            "goldAbility": 0,
+            "damage": 0,
+            "autogold": 2
+        },
+        {
+            "AbilityNumber": 2,
+            "AbilityName": "골드강",
+            "Level": 1,
+            "price": 50,
+            "Diamond": 0,
+            "goldAbility": 2,
+            "damage": 0,
+            "autogold": 0
+        },
+        {
+            "AbilityNumber": 3,
+            "AbilityName": "보석강화",
+            "Level": 1,
+            "price": 1000,
+            "Diamond": 10,
+            "goldAbility": 0,
+            "damage": 0,
+            "autogold": 0
+        }
+    ],
+    "enemyList": [
+        {
+            "enemyNum": 0,
+            "enemyName": "슬라임",
+            "level": 1,
+            "maxhp": 200,
+            "currenthp": 200,
+            "gold": 100,
+            "diamond": 2,
+            "num": 0
+        },
+        {
+            "enemyNum": 1,
+            "enemyName": "슬라임 소",
+            "level": 1,
+            "maxhp": 200,
+            "currenthp": 200,
+            "gold": 200,
+            "diamond": 4,
+            "num": 0
+        },
+        {
+            "enemyNum": 2,
+            "enemyName": "슬라임킹",
+            "level": 1,
+            "maxhp": 300,
+            "currenthp": 300,
+            "gold": 300,
+            "diamond": 5,
+            "num": 0
+        },
+        {
+            "enemyNum": 3,
+            "enemyName": "아기용",
+            "level": 1,
+            "maxhp": 700,
+            "currenthp": 700,
+            "gold": 700,
+            "diamond": 15,
+            "num": 0
+        },
+        {
+            "enemyNum": 4,
+            "enemyName": "토끼족",
+            "level": 1,
+            "maxhp": 500,
+            "currenthp": 500,
+            "gold": 500,
+            "diamond": 8,
+            "num": 0
+        },
+        {
+            "enemyNum": 5,
+            "enemyName": "폭주곰",
+            "level": 1,
+            "maxhp": 600,
+            "currenthp": 600,
+            "gold": 600,
+            "diamond": 11,
+            "num": 0
+        },
+        {
+            "enemyNum": 6,
+            "enemyName": "괴물나무",
+            "level": 1,
+            "maxhp": 700,
+            "currenthp": 700,
+            "gold": 700,
+            "diamond": 13,
+            "num": 0
+        },
+        {
+            "enemyNum": 7,
+            "enemyName": "골렘",
+            "level": 1,
+            "maxhp": 1500,
+            "currenthp": 1500,
+            "gold": 1500,
+            "diamond": 17,
+            "num": 0
+        },
+        {
+            "enemyNum": 8,
+            "enemyName": "아누비스",
+            "level": 1,
+            "maxhp": 1000,
+            "currenthp": 1000,
+            "gold": 1000,
+            "diamond": 20,
+            "num": 0
+        }
+    ],
+    "storeList": [
+        {
+            "StoreNumber": 0,
+            "StoreName": "클릭10배",
+            "time": 15.0,
+            "price": 200,
+            "DamageUp": 0,
+            "goldup": 10,
+            "autoclickup": 0,
+            "on": false
+        },
+        {
+            "StoreNumber": 1,
+            "StoreName": "오토골드10배",
+            "time": 15.0,
+            "price": 200,
+            "DamageUp": 0,
+            "goldup": 0,
+            "autoclickup": 10,
+            "on": false
+        },
+        {
+            "StoreNumber": 2,
+            "StoreName": "피해량10배",
+            "time": 15.0,
+            "price": 200,
+            "DamageUp": 10,
+            "goldup": 0,
+            "autoclickup": 0,
+            "on": false
+        }
+    ]
+}
